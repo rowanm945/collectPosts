@@ -45,7 +45,7 @@ async def health_check():
 async def scrape_multiple_sources(request: ScrapeRequest):
     try:
         # Limit maximum posts to prevent timeouts
-        max_limit = min(request.limit_per_source, 500)
+        max_limit = min(request.limit_per_source, 5000)
         
         # Convert days to time_passed string
         time_mapping = {1: "day", 7: "week", 30: "month", 365: "year"}
